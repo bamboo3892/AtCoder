@@ -11,7 +11,7 @@ def main():
     table = [[0] * (W + 2) for _ in range(H + 2)]
     OFFSET = [[-1, 0], [1, 0], [0, -1], [0, 1]]  # 上下左右
 
-    uf = UnionFind(Q)
+    uf = UnionFind(Q + 1)
     new_groupID = 1
     for query in q:
         if(query[0] == 1):

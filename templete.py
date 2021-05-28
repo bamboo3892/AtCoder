@@ -3,6 +3,7 @@ import numpy as np
 
 import sys
 sys.setrecursionlimit(int(1e7))
+MOD = 1000000007
 
 
 def main():
@@ -11,7 +12,6 @@ def main():
     x = list(map(int, input().split()))
     x = [int(input()) for _ in range(a)]
     x = [list(map(int, input().split())) for _ in range(a)]
-    MOD = 1000000007
 
 
 

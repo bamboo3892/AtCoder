@@ -25,3 +25,22 @@ class UnionFind(object):
                 self.rank[x] += 1
             self.par[y] = x
             self.size[x] += self.size[y]
+
+
+MOD = 1000000007
+
+N = 10 ** 5
+fact = [1, 1]
+factinv = [1, 1]
+inv = [0, 1]
+for i in range(2, N + 1):
+    fact.append((fact[-1] * i) % MOD)
+    inv.append((-inv[MOD % i] * (MOD // i)) % MOD)
+    factinv.append((factinv[-1] * inv[-1]) % MOD)
+
+
+def cmb(n, r):
+    if (r < 0) or (n < r):
+        return 0
+    r = min(r, n - r)
+    return fact[n] * factinv[r] * factinv[n - r] % MOD
